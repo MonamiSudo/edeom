@@ -1,0 +1,72 @@
+@use "../../foundation/variable" as *;
+
+/* ========== よくある質問 / FAQ ========== */
+.p-faq {
+  padding: 72px 0 0;
+
+  &__inner { @include container(900px, 20px); }
+
+  /* 見出し（中央＋下線） */
+  &__title {
+    margin: 0 0 24px; text-align: center;
+
+    > span {
+      display: inline-block; color: $blue1; font-weight: 800;
+      font-size: clamp(18px, 2.2vw, 26px); letter-spacing: .03em; position: relative;
+
+      &::after {
+        content: ""; display: block; width: 36px; height: 3px;
+        margin: 10px auto 0; background: $blue1; border-radius: 3px; opacity: .8;
+      }
+    }
+  }
+
+  /* リスト */
+  &__list { list-style: none; margin: 0; padding: 0; display: grid; row-gap: 12px; }
+
+  /* 各行のカード */
+  &__item {
+    background: rgba($blue1, .04);       // うすいブルーグレー
+    border-radius: 12px;
+    padding: clamp(14px, 2.2vw, 24px) clamp(14px, 2.2vw, 36px);
+  }
+
+  /* 頭：Qアイコン＋質問 */
+  &__head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  /* Qアイコン（固定サイズの丸） */
+  &__q {
+    display: inline-grid; place-items: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: #fff; color: $blue1; font-weight: 800; line-height: 1;
+    border: 2px solid rgba($blue1, .28);
+    font-size: 14px;
+  }
+
+  /* 質問リンク（青・太字） */
+  &__question {
+    color: $blue1; font-weight: 800; text-decoration: none;
+    font-size: clamp(14px, 1.3vw, 16px);
+    &:hover { text-decoration: underline; text-underline-offset: 3px; }
+  }
+
+  /* 回答テキスト */
+  &__answer {
+    margin: 0;
+    color: $text;
+    line-height: 1.9;
+    font-size: clamp(13px, 1.2vw, 16px);
+    padding-left: calc(26px + 10px);   // Qアイコン分をそろえる
+  }
+
+  @include mq-max(900px) {
+    padding: 56px 0;
+    &__inner { @include container(680px, 20px); }
+  }
+}

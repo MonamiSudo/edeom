@@ -1,0 +1,32 @@
+@use "../../foundation/variable" as *;
+
+/* ========== フッター（コピーライト） ========== */
+.p-footer {
+  background: $blue1;       /* 濃い青帯 */
+  color: $white;
+  text-align: center;
+
+  /* 高さは見た目に近い薄めの帯。必要なら数値を調整 */
+  min-height: 36px;
+  display: grid;
+  place-items: center;      /* 垂直水平センター */
+
+  /* 文字 */
+  &__copy {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: .02em;
+    line-height: 1;         /* 余白を詰める */
+    color: inherit;
+
+    a {
+      color: inherit; text-decoration: none;
+      &:hover { text-decoration: underline; text-underline-offset: 2px; }
+    }
+  }
+}
+
+/* 画面幅が狭い時は少しだけ高さを増やす（指で押しやすく） */
+@media (max-width: 900px) {
+  .p-footer { min-height: 40px; }
+}

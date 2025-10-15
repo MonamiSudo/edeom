@@ -1,0 +1,109 @@
+@use "../../foundation/variable" as *;
+
+/* ========== ご支援の流れ ========== */
+.p-flow {
+  background: $gray;                 // #f9f9f9
+  padding: 72px 0;
+
+  &__inner { @include container(1100px, 20px); }
+
+  /* 見出し（中央＋下線） */
+  &__title {
+    text-align: center; margin: 0 0 24px;
+    > span {
+      display: inline-block; color: $blue1; font-weight: 800;
+      font-size: clamp(18px, 2.2vw, 26px); letter-spacing: .03em; position: relative;
+      &::after { content:""; display:block; width:36px; height:3px; margin:10px auto 0;
+        background:$blue1; border-radius:3px; opacity:.8; }
+    }
+  }
+
+  /* リスト */
+  &__list {
+    list-style: none; margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(14px, 2vw, 24px);
+  }
+
+  /* 各ステップ */
+  &__item {
+    position: relative;
+    background: #fff;
+    border: 2px solid rgba($blue1, .28);
+    border-radius: 12px;
+    text-align: center;
+    padding: 18px 16px 20px;
+    display: flex;
+    flex-direction: column;
+
+    /* → 矢印（最後を除く） */
+    &::after {
+      content:"";
+      position: absolute;
+      top: 50%; right: -14px;
+      width: 10px; height: 10px;
+      border-right: 2px solid $blue1;
+      border-top: 2px solid $blue1;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    &:last-child::after { display: none; }
+  }
+
+  /* 画像 */
+  &__img {
+    background-color: #fff;
+    width: 28%;
+    margin: 0 auto;
+    height: auto;
+    margin-bottom: 16px;
+    img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  }
+  @include mq-max(900px) {
+    &__img {
+      width: 16%;
+    }
+  }
+
+  /* STEPバッジ */
+  &__step {
+    display: inline-flex;                 /* 高さ固定でも中央寄せ */
+    align-items: center;
+    justify-content: center;
+    height: 24px;                         /* ← ここで“高さ固定” */
+    padding: 0 14px;                      /* 横だけ可変 */
+    line-height: 1;                       /* フォント依存の伸び防止 */
+    border-radius: 999px;
+    background: rgba($blue1, .08);
+    color: $blue1;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: .06em;
+    white-space: nowrap;                  /* 折り返し禁止（数字が2桁でも高さ不変） */
+    align-self: center;               /* Gridの“縦伸び”を抑止 */
+    margin-bottom: 8px;
+  }
+
+  /* ラベル */
+  &__label {
+    margin: 0;
+    font-weight: 700; color: $text;
+    font-size: clamp(13px, 1.2vw, 16px);
+  }
+
+  /* ========== SP：縦並び（矢印は下向き） ========== */
+  @include mq-max(900px) {
+    padding: 56px 0;
+
+    &__list { grid-template-columns: 1fr; gap: 16px; }
+
+    &__item {
+      padding: 18px 16px 22px;
+
+      &::after {
+        top: auto; bottom: -14px; left: 50%; right: auto;
+        transform: translateX(-50%) rotate(135deg); /* ↓ 向き */
+      }
+    }
+  }
+}

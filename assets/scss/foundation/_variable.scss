@@ -1,0 +1,29 @@
+$black: #333;
+$white: #fff;
+$gray: #f9f9f9;
+
+$blue1: #1555A4;
+$blue2: #F7FBFF;
+
+$accent: red;
+
+$bp-nav: 900px;
+
+$header-h: 80px;                 // PC時のヘッダー高さ
+$brand:    #142a3b;
+$text:     #222;
+$muted:    #666;
+$cta:      #A31C15;
+$cta-text: #fff;
+$border:   #e9ecef;
+
+/* ===== mixin ===== */
+@mixin container($max: 1200px, $px: 20px) {
+  max-width: $max;
+  margin-inline: auto;
+  padding-inline: $px;
+}
+
+@mixin mq-max($w) {
+  @media (max-width: $w) { @content; }
+}

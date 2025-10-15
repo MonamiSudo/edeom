@@ -1,0 +1,100 @@
+@use "../../foundation/variable" as *;
+
+/* ========== よくあるお悩み ========== */
+.p-nayami {
+  position: relative;
+  z-index: 1;                 // ← 追加：このセクションをひとつ上の面に
+  background: $gray;
+  padding: 64px 0 96px;
+  overflow: visible;            // 擬似要素のはみ出しを抑える
+
+  &__inner { @include container(1000px, 20px); }
+
+  /* 見出し（中央＋細い下線） */
+  &__title {
+    margin: 0 0 28px;
+    text-align: center;
+
+    > span {
+      display: inline-block;
+      color: $blue1;         // #1555A4
+      font-weight: 800;
+      font-size: clamp(18px, 2.2vw, 26px);
+      letter-spacing: .03em;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 42px;
+        height: 3px;
+        margin: 10px auto 0;
+        background: $blue1;
+        border-radius: 3px;
+        opacity: .8;
+      }
+    }
+  }
+
+  /* 箇条書き（PC: 2カラム, SP: 1カラム） */
+  &__list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 64px;
+    row-gap: 18px;
+    max-width: 820px;       // 画像の見た目に合わせて中央寄せ
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.9;
+
+    li {
+      position: relative;
+      padding-left: 26px;
+      font-size: 18px;
+
+      /* 青いドット */
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0; top: .78em;
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        background: $blue1;
+      }
+
+      a {
+        color: inherit;
+        text-underline-offset: 3px;
+        text-decoration-color: rgba($blue1, .5);
+        &:hover { text-decoration-color: $blue1; }
+      }
+    }
+  }
+
+  /* 下辺の青い三角形（次セクションへの視線誘導） */
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%; bottom: -30px;
+    transform: translateX(-50%);
+    z-index: 2;                 // ← 追加：下の要素より前面に
+    width: 0; height: 0;
+    border-left: 68px solid transparent;
+    border-right: 68px solid transparent;
+    border-top: 68px solid rgba($blue1, .35);
+    filter: drop-shadow(0 2px 0 rgba(0,0,0,.03));
+    pointer-events: none;
+  }
+
+  /* SP（1カラム） */
+  @include mq-max(900px) {
+    padding: 48px 0 84px;
+    &__list {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      max-width: 600px;
+    }
+  }
+}

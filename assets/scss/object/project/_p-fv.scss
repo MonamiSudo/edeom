@@ -1,0 +1,74 @@
+@use "../../foundation/variable" as *;
+
+/* ========== FV / Hero ========== */
+.p-fv {
+  /* 背景画像（CSSカスタムプロパティで受け取る） */
+  --_bg: var(--fv-bg, none);
+
+  position: relative;
+  isolation: isolate; /* 重なり順の独立性UP */
+  min-height: clamp(360px, 56vh, 680px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: $black;
+
+  /* 背景画像レイヤー */
+  &::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: var(--_bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    transform: translateZ(0); /* スムース化 */
+  }
+
+  /* 白オーバーレイ（不透明度はお好みで） */
+  &::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: rgba($white, .85); // ← 白のopacity
+    z-index: -1;
+  }
+
+  /* 中身 */
+  &__inner {
+    @include container(1000px, 20px);
+  }
+
+  &__title {
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: .02em;
+    font-size: clamp(20px, 3.2vw, 34px);
+    margin: 0 0 24px;
+    color: $black;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 28px;
+    border-radius: 8px;
+    background: $cta;
+    color: $white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 2px 0 rgba(0,0,0,.06);
+    transition: transform .06s ease, filter .2s ease;
+
+    &:hover { filter: brightness(.96); }
+    &:active { transform: translateY(1px); }
+  }
+
+  /* レスポンシブ微調整 */
+  @include mq-max(900px) {
+    &__title { font-size: clamp(18px, 5vw, 28px); }
+    &__cta   { height: 46px; padding-inline: 24px; }
+  }
+}

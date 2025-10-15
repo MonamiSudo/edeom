@@ -1,0 +1,22 @@
+body, figure, h1, h2, h3, p {
+  margin: 0;
+}
+
+h1 { font-size: 36px; }
+h2 { font-size: 28px; }
+h3 { font-size: 20px; }
+p { font-size: 16px; }
+
+@media (max-width: 900px) {
+  h1 { font-size: 32px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 18px; }
+  p { font-size: 15px; }
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+               "Yu Gothic", "Meiryo", sans-serif;
+  /* 必要に応じて */
+  font-weight: 400;
+}

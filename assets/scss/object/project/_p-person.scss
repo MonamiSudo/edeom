@@ -1,0 +1,84 @@
+@use "../../foundation/variable" as *;
+
+/* ========== 担当者紹介 ========== */
+.p-person {
+  padding: 72px 0;
+
+  &__inner { @include container(840px, 20px); }
+
+  /* 見出し：中央＋細い下線 */
+  &__title {
+    margin: 0 0 28px;
+    text-align: center;
+
+    > span {
+      display: inline-block;
+      color: $blue1;
+      font-weight: 800;
+      font-size: clamp(18px, 2.2vw, 26px);
+      letter-spacing: .03em;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 36px; height: 3px;
+        margin: 10px auto 0;
+        background: $blue1;
+        border-radius: 3px;
+        opacity: .8;
+      }
+    }
+  }
+
+  /* カード本体（中央寄せ） */
+  &__card {
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* 画像：角丸・比率キープ・薄い影（ダミー背景つき） */
+  &__media {
+    aspect-ratio: 24 / 14;
+    background: $white;          // 画像未設定時のプレースホルダ
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 0 rgba(0,0,0,.04);
+    margin: 0 auto 14px;
+
+    img {
+      width: 100%; height: 100%;
+      object-fit: contain; 
+      display: block;
+    }
+  }
+
+  /* 氏名 */
+  &__name {
+    font-weight: 700;
+    letter-spacing: .1em;
+    font-size: clamp(14px, 1.4vw, 16px);
+    color: $text;
+  }
+
+  &__name.eng {
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  /* 紹介文 */
+  &__bio {
+    margin: 0;
+    color: $text;
+    line-height: 1.9;
+    font-size: clamp(14px, 1.2vw, 15px);
+    text-align: left;
+  }
+
+  @include mq-max(900px) {
+    padding: 56px 0;
+    &__inner { @include container(640px, 20px); }
+  }
+}

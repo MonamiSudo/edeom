@@ -1,0 +1,78 @@
+@use "../../foundation/variable" as *;
+
+/* ========== 関連サービス / Service (outline cards) ========== */
+.p-service {
+  padding: 72px 0;
+  background: #fff;
+
+  &__inner { @include container(1100px, 20px); }
+
+  /* 見出し（中央＋下線） */
+  &__title {
+    margin: 0 0 24px; text-align: center;
+
+    > span {
+      display: inline-block; color: $blue1; font-weight: 800;
+      font-size: clamp(18px, 2.2vw, 26px); letter-spacing: .03em; position: relative;
+
+      &::after {
+        content: ""; display: block; width: 36px; height: 3px;
+        margin: 10px auto 0; background: $blue1; border-radius: 3px; opacity: .8;
+      }
+    }
+  }
+
+  /* グリッド（PC3 / タブ2 / SP1） */
+  &__grid {
+    list-style: none; margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(18px, 3.2vw, 44px);
+  }
+
+  /* カード本体（青い輪郭・角丸） */
+  &__card {
+    background: #fff;
+    border: 1px solid $blue1;
+    border-radius: 16px;
+    padding: 22px 18px;
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(0,0,0,.03);
+  }
+
+  /* 画像（正方形・角丸） */
+  &__media {
+    margin: 0 auto 20px;
+    width: min(80px, 50%);
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  }
+
+  /* タイトル＆説明 */
+  &__name {
+    color: $blue1;
+    margin: 0 0 10px;
+    font-weight: 800;
+    font-size: clamp(15px, 1.5vw, 18px);
+  }
+  &__desc {
+    margin: 0;
+    color: $text;
+    line-height: 1.9;
+    font-size: clamp(13px, 1.2vw, 15px);
+    text-align: left;
+  }
+
+  /* レスポンシブ */
+  @include mq-max(1100px) {
+    &__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @include mq-max(700px) {
+    padding: 56px 0;
+    &__grid { grid-template-columns: 1fr; }
+    &__media { width: 80px; } /* SPは少し大きめに見せる */
+  }
+}

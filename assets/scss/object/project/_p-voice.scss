@@ -1,0 +1,99 @@
+@use "sass:color";
+@use "../../foundation/variable" as *;
+
+/* ========== お客様の声 / Voice ========== */
+.p-voice {
+  padding: 72px 0;
+  background: color.mix($blue1, #fff, $weight: 6%); // 淡いブルー
+
+  &__inner { @include container(1100px, 20px); }
+
+  /* 見出し（中央＋下線） */
+  &__title {
+    margin: 0 0 24px; text-align: center;
+
+    > span {
+      display: inline-block; color: $blue1; font-weight: 800;
+      font-size: clamp(18px, 2.2vw, 26px); letter-spacing: .03em; position: relative;
+
+      &::after {
+        content: ""; display: block; width: 36px; height: 3px;
+        margin: 10px auto 0; background: $blue1; border-radius: 3px; opacity: .8;
+      }
+    }
+  }
+
+  .p-voice__card {
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    box-shadow: 0 1px 0 rgba(0,0,0,.04);
+  }
+  @media (max-width: 900px) {
+    .p-voice__card {
+      flex-direction: column-reverse;
+    }
+  }
+  
+  /* 左パネルの区切り線はそのまま */
+  .p-voice__panel {
+    padding: clamp(20px, 3.2vw, 28px);
+    border-right: 1px solid rgba($blue1, .18);
+    display: grid;
+    row-gap: 12px;
+    width: 50%;
+  }
+  
+  /* 右画像（そのままでOK） */
+  .p-voice__media {
+    margin: 0; background: #d9d9d9;
+    img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    width: 50%;
+  } 
+  @media (max-width: 900px) {
+    .p-voice__media { width: 100%; }
+  }
+
+  /* SPは従来どおり縦積み */
+  @media (max-width: 900px) {
+    .p-voice__card { grid-template-columns: 1fr; }
+    .p-voice__panel { border-right: none; border-bottom: 1px solid rgba($blue1, .18); width: 90%; }
+  }
+
+  &__client {
+    margin: 0;
+    font-size: clamp(13px, 1.2vw, 14px);
+    color: $text;
+  }
+
+  &__heading {
+    margin: 0;
+    color: $blue1; font-weight: 800;
+    font-size: clamp(16px, 1.6vw, 20px);
+    line-height: 1.6;
+  }
+
+  &__text {
+    margin: 0;
+    color: $text;
+    line-height: 1.9;
+    font-size: 15px;
+    font-size: clamp(14px, 1.2vw, 16px);
+  }
+
+  /* 定義リスト（2列風） */
+  &__meta {
+    margin: 4px 0 0;
+    display: grid; row-gap: 6px;
+    font-size: clamp(13px, 1.2vw, 14px);
+
+    > div {
+      display: grid;
+      grid-template-columns: 7.5em 1fr; /* dt 幅 / 内容 */
+      column-gap: 12px;
+    }
+    dt { color: $muted; }
+    dd { margin: 0; font-weight: 700; }
+  }
+
+}
