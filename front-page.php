@@ -59,7 +59,7 @@
           <li><a href="#fee">料金</a></li>
           <li><a href="#faq">よくある質問</a></li>
         </ul>
-        <a class="cta" href="https://timerex.net/s/sudo.m.edeom_b8f2/3403d1a7" target="_blank">無料相談はこちら</a>
+        <a class="cta" href="#contact" target="_blank">無料相談はこちら</a>
       </nav>
     </div>
   </header>
@@ -71,7 +71,7 @@
     <section id="fv" class="p-fv" style="--fv-bg:url('<?php echo $uri ?>/assets/image/keyvisual.jpg')">
       <div class="p-fv__inner">
         <h1 class="p-fv__title">Webマーケティングを通して、<br>“次の一歩”を共に設計するパートナーへ</h1>
-        <a href="https://timerex.net/s/sudo.m.edeom_b8f2/3403d1a7" class="p-fv__cta" target="_blank">無料相談はこちら</a>
+        <a href="#contact" class="p-fv__cta">無料相談はこちら</a>
       </div>
     </section>
     <!-- End FV -->
@@ -485,6 +485,17 @@
       </div>
     </section> -->
     <!-- End 制作実績 -->
+
+    <section id="contact" class="p-service">
+      <div class="p-contact__inner">
+        <h2 class="p-service__title"><span>お問い合わせ</span></h2>
+        <!-- hubspotフォーム -->
+        <script src="https://js-na2.hsforms.net/forms/embed/244114665.js" defer></script>
+        <div class="hs-form-frame" data-region="na2" data-form-id="b1c6ad98-6f3d-478a-b19e-9b823221a266" data-portal-id="244114665"></div>
+        <!-- End hubspotフォーム -->
+        <div class="p-contact__hidden"></div>
+      </div>
+    </section>
 
     <footer class="p-footer">
       <p class="p-footer__copy">© 2025 EDEOM. All rights reserved.</p>
