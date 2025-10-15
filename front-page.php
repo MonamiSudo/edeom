@@ -19,6 +19,17 @@
 
   <!-- Favicon -->
   <link rel="icon" href="<?php echo $uri ?>/favicon.ico" type="image/x-icon">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYD7JXZF2F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QYD7JXZF2F');
+  </script>
+  <!-- End Google tag (gtag.js) -->
 </head>
 
 <body>
