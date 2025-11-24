@@ -53,11 +53,11 @@
       <nav id="global-nav" class="primary-nav" aria-label="グローバルナビ">
         <ul>
           <li><a href="#feature">SEOサービス特徴</a></li>
-          <li><a href="#jisseki">運用実績</a></li>
+          <li><a href="#jisseki">SEO対策実績</a></li>
           <li><a href="#voice">お客様の声</a></li>
           <li><a href="#flow">ご支援の流れ</a></li>
-          <li><a href="#fee">料金</a></li>
           <li><a href="#faq">よくある質問</a></li>
+          <li><a href="#production">サイト制作実績</a></li>
         </ul>
         <a class="cta" href="#contact" target="_blank">無料相談はこちら</a>
       </nav>
@@ -70,7 +70,7 @@
     <!-- FV -->
     <section id="fv" class="p-fv" style="--fv-bg:url('<?php echo $uri ?>/assets/image/keyvisual.jpg')">
       <div class="p-fv__inner">
-        <h1 class="p-fv__title">Webマーケティングを通して、<br>“次の一歩”を共に設計するパートナーへ</h1>
+        <h1 class="p-fv__title">SEO対策を通して、<br>“次の一歩”を共に設計するパートナーへ</h1>
         <a href="#contact" class="p-fv__cta">無料相談はこちら</a>
       </div>
     </section>
@@ -107,9 +107,9 @@
             </figure>
             <div class="p-feature__body">
               <p class="p-feature__num">01</p>
-              <h3 class="p-feature__heading">本質的なSEO対策をご提案</h3>
+              <h3 class="p-feature__heading">目的特化のSEO対策をご提案</h3>
               <p class="p-feature__text">
-              事業課題をヒアリングし、目的から逆算した売上に寄与する施策をご提案します。すでに施策を行っている場合、本当に効果が見込めるか、その改善案までご提案いたします。単にアクセス数を伸ばす施策は行いません。
+              事業課題をヒアリングし、目的から逆算した売上に寄与する施策をご提案します。すでに施策を行っている場合、本当に効果が見込めるか、対策案の見直しから着手させていただきます。
               </p>
             </div>
           </li>
@@ -121,9 +121,9 @@
             </figure>
             <div class="p-feature__body">
               <p class="p-feature__num">02</p>
-              <h3 class="p-feature__heading">SEOを軸にしたWeb施策の一貫性</h3>
+              <h3 class="p-feature__heading">担当者は事業会社のマーケター出身</h3>
               <p class="p-feature__text">
-              SEO対策だけでなく、Web制作や広告運用の知見も活かし、Web全体で成果を上げる設計も可能です。<br>サイト構造、サイト導線、コンテンツ企画までワンストップで支援可能なため、お気軽にご相談ください。
+              事業会社でWebマーケティング部を立ち上げ、0からWeb施策を行いグロースさせた経験があります。中小企業の課題感に合わせて最適な施策をご提案することが可能です。
               </p>
             </div>
           </li>
@@ -292,12 +292,11 @@
     <!-- Endご支援までの流れ -->
 
     <!-- 料金 -->
-    <section id="fee" class="p-fee">
+    <!-- <section id="fee" class="p-fee">
       <div class="p-fee__inner">
         <h2 class="p-fee__title"><span>料金</span></h2>
 
         <div class="p-fee__grid">
-          <!-- ① SEOコンサルティング -->
           <article class="p-fee__card">
             <h3 class="p-fee__plan">SEOコンサルティング</h3>
 
@@ -318,8 +317,6 @@
               <li>定期レポート・改善提案 など</li>
             </ul>
           </article>
-
-          <!-- ② SEO記事制作代行 -->
           <article class="p-fee__card">
             <h3 class="p-fee__plan">SEO記事制作代行</h3>
 
@@ -342,7 +339,7 @@
           </article>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- End 料金 -->
 
     <!-- よくある質問 -->
@@ -452,7 +449,7 @@
     <!-- End 関連サービス -->
 
     <!-- 制作実績 -->
-    <!-- <section id="production" class="p-production">
+    <section id="production" class="p-production">
       <div class="p-production__inner">
         <h2 class="p-production__title"><span>制作実績</span></h2>
 
@@ -463,7 +460,8 @@
               <figure class="p-production__media">
                 <img src="<?php echo $image_uri ?>/production1.png" alt="SMILE CREATE GROUP様 パウワウブランドサイト">
               </figure>
-              <span class="p-production__badge">業界・サービス名</span>
+              <span class="p-production__badge">Webディレクション</span>
+              <span class="p-production__badge">Webコーディング</span>
               <h3 class="p-production__name">
                 株式会社SMILE CREATE GROUP様　パウワウブランドサイト
               </h3>
@@ -473,17 +471,45 @@
           <li class="p-production__card">
             <a class="p-production__link" href="https://charge10.tokyo/" target="_blank">
               <figure class="p-production__media">
-                <img src="<?php echo $image_uri ?>/production2.png" alt="SMILE CREATE GROUP様 パウワウブランドサイト">
+                <img src="<?php echo $image_uri ?>/production2.png" alt="SMILE CREATE GROUP様 ファスト整体チャージブランドサイト">
               </figure>
-              <span class="p-production__badge">業界・サービス名</span>
+              <span class="p-production__badge">Webディレクション</span>
+              <span class="p-production__badge">Webコーディング</span>
               <h3 class="p-production__name">
                 株式会社SMILE CREATE GROUP様　パウワウブランドサイト
               </h3>
             </a>
           </li>
+
+          <li class="p-production__card">
+            <a class="p-production__link" href="https://good-energy.co.jp/new-solar-power/pro/" target="_blank">
+              <figure class="p-production__media">
+                <img src="<?php echo $image_uri ?>/soraserach-pro.png" alt="グッド・エナジー様 そらサーチPRO">
+              </figure>
+              <span class="p-production__badge">Webディレクション</span>
+              <h3 class="p-production__name">
+                株式会社グッド・エナジー様　そらサーチPRO
+              </h3>
+            </a>
+          </li>
+
+          <li class="p-production__card">
+            <a class="p-production__link" href="https://powwow-ginza.com/lp/yaechika/" target="_blank">
+              <figure class="p-production__media">
+                <img src="<?php echo $image_uri ?>/powwow-yaechika.png" alt="SMILE CREATE GROUP様 パウワウヤエチカ店専用LP">
+              </figure>
+              <span class="p-production__badge">Webディレクション</span>
+              <span class="p-production__badge">Webデザイン</span>
+              <span class="p-production__badge">Webコーディング</span>
+              <h3 class="p-production__name">
+                株式会社SMILE CREATE GROUP様　パウワウヤエチカ店専用LP
+              </h3>
+            </a>
+          </li>
+
         </ul>
       </div>
-    </section> -->
+    </section>
     <!-- End 制作実績 -->
 
     <section id="contact" class="p-service">
